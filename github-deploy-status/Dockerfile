@@ -9,8 +9,9 @@ LABEL "com.github.actions.description"="Create a deploy status"
 LABEL "com.github.actions.icon"="upload"
 LABEL "com.github.actions.color"="green"
 
-RUN apk --update add jq curl
+RUN mkdir /deploy-scripts
 
+COPY ./bin /deploy-scripts/bin
 COPY "entrypoint.sh" "/entrypoint.sh"
 
 ENTRYPOINT ["/entrypoint.sh"]
