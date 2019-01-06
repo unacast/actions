@@ -9,8 +9,8 @@ DEPLOYMENT_ID=$(${BASEDIR}/deployment-get-id)
 # TODO: Add option for auto_inactive
 
 echo "Setting status to ${1} for deployment-id '${DEPLOYMENT_ID}'"
-JSON_STRING='{"state":"${1}"}'
+JSON_STRING='{"state":"'"${1}"'"}'
 echo ${JSON_STRING}
 curl -X POST -H "Authorization: token ${GITHUB_TOKEN}" \
-    --data '{"state":"${1}"}' \
+    --data '{"state":"'"${1}"'"}' \
     "https://api.github.com/repos/unacast/Action-Force/deployments/${DEPLOYMENT_ID}/statuses"
