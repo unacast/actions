@@ -8,4 +8,4 @@ DEPLOYMENT_ID=${BASEDIR}/deployment-get-id
 # TODO: Add option for log_url
 # TODO: Add option for auto_inactive
 
-curl -X POST -H "Authorization: token ${GITHUB_TOKEN}" "https://api.github.com/repos/unacast/Action-Force/deployments/${DEPLOYMENT_ID}/statuses?state=${1}"
+curl -v -X POST -H "Authorization: token ${GITHUB_TOKEN}" "https://api.github.com/repos/unacast/Action-Force/deployments/${DEPLOYMENT_ID}/statuses?state=${1}"
