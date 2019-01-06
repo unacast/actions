@@ -1,4 +1,4 @@
-SHELL_FILES=$(wildcard *.sh */*.sh)
+SHELL_FILES=$(filter-out bin/JSON.sh, $(wildcard *.sh */*.sh))
 BATS_TESTS=$(wildcard *.bats */*.bats)
 
 .PHONY: shell-lint
