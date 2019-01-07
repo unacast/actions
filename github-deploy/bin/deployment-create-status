@@ -3,12 +3,7 @@
 BASEDIR=$(dirname "$0")
 DEPLOYMENT_ID=$(${BASEDIR}/deployment-get-id)
 
-# TODO: Only allow correct values of status
-# TODO: Add option for description
-# TODO: Add option for log_url
-# TODO: Add option for auto_inactive
-
 echo "Setting status to ${1} for deployment-id '${DEPLOYMENT_ID}'"
 curl --silent --show-error --fail -X POST -H "Authorization: token ${GITHUB_TOKEN}" \
     --data '{"state":"'"${1}"'"}' \
-    "https://api.github.com/repos/unacast/Action-Force/deployments/${DEPLOYMENT_ID}/statuses"
+    "https://api.github.com/repos/${GITHUB_REPOSITORY}/deployments/${DEPLOYMENT_ID}/statuses"
