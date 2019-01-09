@@ -1,0 +1,12 @@
+#!/bin/sh
+
+BASEDIR=$(dirname "$0")
+DEPLOYMENT_ID=$(${BASEDIR}/deployment-get-id)
+
+echo "Executing ${1} and creating status for error if not exit code 0"
+sh -c "$1"
+RESULT=$?
+if [[ 0 != "${RESULT}" ]];then
+    ${BASEDIR}/deployment-create-status error
+    exit ${RESULT}
+fi
