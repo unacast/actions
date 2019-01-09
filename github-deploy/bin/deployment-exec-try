@@ -2,10 +2,10 @@
 
 BASEDIR=$(dirname "$0")
 
-echo "Executing $* and creating status for error if not exit code 0"
 sh -c "$*"
 RESULT=$?
 if [[ 0 != "${RESULT}" ]];then
+    echo "Failed '$*'! Exit code '${RESULT}' is not equal to 0"
     ${BASEDIR}/deployment-create-status error
     exit ${RESULT}
 fi
