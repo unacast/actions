@@ -2,4 +2,4 @@
 
 BASEDIR=$(dirname "$0")
 
-echo "${GITHUB_EVENT_PATH}" | "${BASEDIR}"/JSON.sh | grep '\["deployment","id"]' | cut -f2
+"${BASEDIR}"/JSON.sh < "${GITHUB_EVENT_PATH}" | grep '\["deployment","id"]' | cut -f2
