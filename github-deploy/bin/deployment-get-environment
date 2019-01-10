@@ -2,4 +2,4 @@
 
 BASEDIR=$(dirname "$0")
 
-cat ${GITHUB_EVENT_PATH} | ${BASEDIR}/JSON.sh | grep '\["deployment","environment"]' | cut -f2 | sed -e 's/^"//' -e 's/"$//'
+cmd "${GITHUB_EVENT_PATH}" | "${BASEDIR}"/JSON.sh | grep '\["deployment","environment"]' | cut -f2 | sed -e 's/^"//' -e 's/"$//'

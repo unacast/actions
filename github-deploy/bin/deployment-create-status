@@ -1,7 +1,7 @@
 #!/bin/sh
 
 BASEDIR=$(dirname "$0")
-DEPLOYMENT_ID=$(${BASEDIR}/deployment-get-id)
+DEPLOYMENT_ID=$("${BASEDIR}"/deployment-get-id)
 
 echo "Setting status to ${1} for deployment-id '${DEPLOYMENT_ID}'"
 curl --silent --show-error --fail -X POST -H "Authorization: token ${GITHUB_TOKEN}" \
