@@ -46,6 +46,7 @@ action "Success" {
   uses = "docker://byrnedo/alpine-curl"
   args = "echo hallois"
   runs = "/github/home/bin/deployment-exec-try"
+  secrets = ["GITHUB_TOKEN"]
   needs = ["Add deployscripts"]
 }
 
@@ -53,6 +54,7 @@ action "This one failes and updates Deployment API with error" {
   uses = "docker://byrnedo/alpine-curl"
   args = "cd this-folder-does-not-exist"
   runs = "/github/home/bin/deployment-exec-try"
+  secrets = ["GITHUB_TOKEN"]
   needs = ["Add deployscripts"]
 }
 ``` 
