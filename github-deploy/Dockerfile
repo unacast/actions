@@ -1,4 +1,4 @@
-FROM alpine
+FROM byrnedo/alpine-curl
 
 LABEL "name"="deploystatus"
 LABEL "maintainer"="Unacast <developers+github@unacast.com>"

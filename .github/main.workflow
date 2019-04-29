@@ -25,7 +25,7 @@ action "Docker build" {
 action "Publish Filter" {
   needs = ["Docker build"]
   uses = "actions/bin/filter@master"
-  args = "branch master"
+  args = "branch alpine-curl"
 }
 
 action "Docker Login" {
