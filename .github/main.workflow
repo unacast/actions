@@ -23,13 +23,13 @@ action "Docker build" {
 }
 
 action "Publish Filter" {
-  needs = ["Test"]
+  needs = ["Docker build"]
   uses = "actions/bin/filter@master"
   args = "branch master"
 }
 
 action "Docker Login" {
-  needs = ["Publish Filter", "Docker build"]
+  needs = ["Publish Filter"]
   uses = "actions/docker/login@master"
   secrets = ["DOCKER_USERNAME", "DOCKER_PASSWORD"]
 }
