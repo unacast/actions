@@ -25,7 +25,7 @@ action "Docker build" {
 action "Publish Filter" {
   needs = ["Test"]
   uses = "actions/bin/filter@master"
-  args = "branch docker-publish"
+  args = "branch master"
 }
 
 action "Docker Login" {
