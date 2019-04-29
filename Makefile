@@ -22,4 +22,8 @@ test: ## Call the 'test' target on all sub-modules
 .PHONY: dev-all
 dev-all: lint build test
 
+.PHONY: publish
+publish: ## Call the 'publish' target on all sub-modules
+	$(foreach mod,$(MODULES),($(MAKE) -C $(mod) $@) || exit $$?;)
+
 include help.mk
