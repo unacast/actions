@@ -7,7 +7,7 @@ LABEL "version"="1.0.0"
 LABEL "com.github.actions.name"="curl"
 LABEL "com.github.actions.description"="run curl"
 LABEL "com.github.actions.icon"="terminal"
-LABEL "com.github.actions.color"="black"
+LABEL "com.github.actions.color"="gray-dark"
 
 RUN apk add --no-cache --update curl
 ENTRYPOINT ["/usr/bin/curl"]
