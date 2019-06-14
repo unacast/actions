@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+if [ -z "$1" ] ; then
+  echo "Payload argument  must be set. Usage: deployment-get-payload <payload>"
+  exit 64
+fi
+
+BASEDIR=$(dirname "$0")
+_payload_field=$1
+
+"${BASEDIR}"/JSON.sh < "${GITHUB_EVENT_PATH}" | grep "\[\"deployment\",\"payload\",\"config\",\"${_payload_field}\"]" | cut -f2 | sed -e 's/^"//' -e 's/"$//'
