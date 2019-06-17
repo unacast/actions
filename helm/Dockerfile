@@ -7,7 +7,7 @@ LABEL "version"="1.0.0"
 LABEL "com.github.actions.name"="Helm"
 LABEL "com.github.actions.description"="Helm"
 LABEL "com.github.actions.icon"="terminal"
-LABEL "com.github.actions.color"="orange"
+LABEL "com.github.actions.color"="gray-dark"
 
 ENV HELM_VERSION="v2.14.1"
 
