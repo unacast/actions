@@ -19,9 +19,9 @@ geos-dev
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
 
-#ENV GITHUB_WORKSPACE /github/workspace
-#WORKDIR /github/workspace
+#ENV HOME /github/home
+#WORKDIR /github/home
 
-COPY geojson2csv.py ${GITHUB_WORKSPACE}/
+COPY geojson2csv.py "${HOME}"/.
 
 ENTRYPOINT [ "python", "geojson2csv.py"]
