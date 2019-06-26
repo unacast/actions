@@ -14,7 +14,8 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
 RUN apk add --no-cache \
 gcc \
 libc-dev \
-geos-dev
+geos-dev \
+curl
 
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
