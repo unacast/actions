@@ -17,8 +17,7 @@ libc-dev \
 geos-dev \
 curl
 
-COPY requirements.txt /
-RUN pip install -r /requirements.txt
+RUN pip install geojson shapely
 
 COPY geojson2csv.py /usr/bin/geojson2csv
 RUN chmod +x /usr/bin/geojson2csv
