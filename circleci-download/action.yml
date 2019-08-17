@@ -1,0 +1,10 @@
+name: 'CircleCI Download'
+description: 'Downloads the latest artifact for a branch from CircleCI'
+author: 'Unacast'
+inputs: 
+  outputFolder:
+    description: 'Folder to store the artifacts'
+    default: ''
+runs:
+  using: 'node12'
+  main: 'lib/main.js'

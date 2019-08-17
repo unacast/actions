@@ -1,0 +1,19 @@
+{
+  "name": "circleci-download",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.0.0",
+    "@actions/github": "^1.0.0",
+    "@types/node": "^12.7.2",
+    "circleci-api": "^4.0.0",
+    "node-fetch": "^2.6.0"
+  }
+}
