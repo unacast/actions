@@ -1,0 +1,11 @@
+
+name: 'jstest'
+description: 'Testing if we can not checkin node_modules'
+author: 'Unacast'
+inputs: 
+  secret:
+    description: 'Dummy stuff'
+    default: ''
+runs:
+  using: 'node12'
+  main: 'lib/main.js'
