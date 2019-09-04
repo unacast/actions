@@ -10,8 +10,6 @@
 
 BASEDIR=$(dirname "$0")
 DEPLOYMENT_ID=$("${BASEDIR}"/deployment-get-id)
-GITHUB_URL="https://github.com"
-GITHUB_API_URL="https://api.github.com"
 
 DEPLOY_STATE="${1}"
 DEPLOY_DESC="${2}"
@@ -19,10 +17,9 @@ DEPLOY_DESC="${2}"
 [ -n "${DEPLOY_DESC}" ] || DEPLOY_DESC="Deploying from GitHub Actions"
 
 echo "Setting status to ${DEPLOY_STATE} for deployment-id '${DEPLOYMENT_ID}'"
-wget -O-- -q \
-    --post-data '{"state":"${DEPLOY_STATE}", "target_url":"${GITHUB_URL}/${GITHUB_REPOSITORY}/actions", "description":"${DEPLOY_DESC}"}' \
-    -"${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/deployments/${DEPLOYMENT_ID}/statuses" \
+wget -O-- \
+    --post-data "{\"state\":\"${DEPLOY_STATE}\", \"target_url\":\"https://github.com/${GITHUB_REPOSITORY}/actions\", \"description\":\"${DEPLOY_DESC}\"}" \
     --header "Authorization: token ${GITHUB_TOKEN}" \
     --header "Content-Type: text/json; charset=utf-8" \
     --header "Accept: application/vnd.github.flash-preview+json" \
-    ${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/deployments/${DEPLOYMENT_ID}/statuses
+    https://api.github.com/repos/"${GITHUB_REPOSITORY}"/deployments/"${DEPLOYMENT_ID}"/statuses
