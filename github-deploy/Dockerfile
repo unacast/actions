@@ -12,8 +12,7 @@ LABEL "com.github.actions.color"="green"
 RUN mkdir /deploy-scripts
 
 COPY ./bin /deploy-scripts/bin
-COPY "entrypoint.sh" "/entrypoint.sh"
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/deploy-scripts/bin/deployment-create-status"]
 
 CMD [""]
