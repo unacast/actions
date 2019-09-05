@@ -7,12 +7,17 @@
 #   $1 - The deployment state
 #   $2 - The deployment description
 #
+set -e
 
 BASEDIR=$(dirname "$0")
 DEPLOYMENT_ID=$("${BASEDIR}"/deployment-get-id)
 
-DEPLOY_STATE="${1}"
+DEPLOY_STATE=$(echo "${1}"|tr [A-Z] [a-z])
 DEPLOY_DESC="${2}"
+
+if [ "$DEPLOY_STATE" == "cancelled" ]; then
+	DEPLOY_STATE="inactive"
+fi
 
 [ -n "${DEPLOY_DESC}" ] || DEPLOY_DESC="Deploying from GitHub Actions"
 
