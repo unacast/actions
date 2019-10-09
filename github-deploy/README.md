@@ -1,6 +1,6 @@
 # github-deploy
 
-This actions adds functions for interacting with Github Deployment API and a Workflow instantiated from a deployment event
+This action adds functions for interacting with Github Deployment API and a Workflow instantiated from a deployment event
 
 ## Usage
 
