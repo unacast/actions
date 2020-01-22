@@ -9,7 +9,7 @@ LABEL "com.github.actions.description"="Helm"
 LABEL "com.github.actions.icon"="terminal"
 LABEL "com.github.actions.color"="gray-dark"
 
-ENV HELM_VERSION="v2.14.1"
+ENV HELM_VERSION="v2.16.1"
 
 RUN curl -Lo /tmp/helm-linux-amd64.tar.gz https://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz \
     && tar -xvf /tmp/helm-linux-amd64.tar.gz -C /tmp/ \
